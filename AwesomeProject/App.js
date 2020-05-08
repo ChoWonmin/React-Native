@@ -33,7 +33,7 @@ const App: () => React$Node = () => {
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
           <View>
-            <Text>Hello Wolrl!</Text>
+            <Text>Hello World!</Text>
           </View>
         </ScrollView>
       </SafeAreaView>
