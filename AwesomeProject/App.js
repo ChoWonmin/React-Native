@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Image,
 } from 'react-native';
 
 import {
@@ -34,6 +35,10 @@ const App: () => React$Node = () => {
           style={styles.scrollView}>
           <View>
             <Text>Hello World!</Text>
+            <Image
+              source={require('./assets/bomb.png')}
+              style={{width: 100, height: 100}}
+            />
           </View>
         </ScrollView>
       </SafeAreaView>
