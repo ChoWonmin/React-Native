@@ -25,23 +25,7 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-class BombImage extends Component {
-  render() {
-    let pic = '';
-
-    if (this.props.type === 'one') {
-      pic = require('./assets/aladin.jpg');
-    } else if (this.props.type === 'two') {
-      pic = require('./assets/lat.jpg');
-    }
-
-    return (
-      <View>
-        <Image source={pic} style={{width: '100%'}} />
-      </View>
-    );
-  }
-}
+import Picture from './components/Picture';
 
 const App: () => React$Node = () => {
   return (
@@ -53,8 +37,8 @@ const App: () => React$Node = () => {
           style={styles.scrollView}>
           <View>
             <Text>Hello World!</Text>
-            <BombImage type="one" />
-            <BombImage type="two" />
+            <Picture type="one" />
+            <Picture type="two" />
           </View>
         </ScrollView>
       </SafeAreaView>
