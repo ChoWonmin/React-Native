@@ -1,20 +1,19 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, TextInput} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
-class HomeScreen extends React.Component {
+class PostScreen extends React.Component {
   render() {
     const {navigation} = this.props;
     return (
       <View style={styles.container}>
-        <Text>Home Screen</Text>
+        <Text>Post Screen</Text>
         <Button
-          title="Go to PostScreen"
+          title="Go to HomeScreen"
           onPress={() => {
-            navigation.navigate('Post');
+            navigation.navigate('Home');
           }}
         />
-        <TextInput />
       </View>
     );
   }
@@ -23,7 +22,7 @@ class HomeScreen extends React.Component {
 export default function(props) {
   const navigation = useNavigation();
 
-  return <HomeScreen {...props} navigatetion={navigation} />;
+  return <PostScreen {...props} navigatetion={navigation} />;
 }
 
 const styles = StyleSheet.create({
