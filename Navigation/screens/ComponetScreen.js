@@ -8,6 +8,7 @@ import {
   Button,
   Image,
 } from 'react-native';
+import {AccessAlarm, ThreeDRotation} from '@material-ui/icons';
 import {useNavigation} from '@react-navigation/native';
 
 class ComponetScreen extends React.Component {
@@ -25,6 +26,7 @@ class ComponetScreen extends React.Component {
               <View style={styles.postContent}>
                 <View>
                   <Text style={styles.Headline}>알라딘</Text>
+                  <AccessAlarm />
                 </View>
                 <View style={styles.profileLine}>
                   <View style={styles.profile} />
