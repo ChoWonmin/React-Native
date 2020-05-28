@@ -8,7 +8,7 @@ import {
   Button,
   Image,
 } from 'react-native';
-import {AccessAlarm, ThreeDRotation} from '@material-ui/icons';
+// import {AccessAlarm, ThreeDRotation} from '@material-ui/icons';
 import {useNavigation} from '@react-navigation/native';
 
 class ComponetScreen extends React.Component {
@@ -26,7 +26,6 @@ class ComponetScreen extends React.Component {
               <View style={styles.postContent}>
                 <View>
                   <Text style={styles.Headline}>알라딘</Text>
-                  <AccessAlarm />
                 </View>
                 <View style={styles.profileLine}>
                   <View style={styles.profile} />
@@ -49,6 +48,15 @@ class ComponetScreen extends React.Component {
                   <View style={styles.hashtag}>
                     <Text style={styles.hashtagText}>#Jasmine</Text>
                   </View>
+                </View>
+              </View>
+              <View style={styles.replyContainer}>
+                <View style={styles.replyLine}>
+                  <View style={styles.profile} />
+                  <Text>
+                    영화가 너무 아름답다... ost도 잊혀지지않고 디즈니 실사중에
+                    최고다.
+                  </Text>
                 </View>
               </View>
             </View>
@@ -124,6 +132,17 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 32,
     fontWeight: 'bold',
+  },
+  replyContainer: {
+    width: '100%',
+    height: 120,
+    display: 'flex',
+    overflow: 'hidden',
+    padding: 16,
+  },
+  replyLine: {
+    flex: 1,
+    flexDirection: 'row',
   },
   row: {
     flex: 1,
