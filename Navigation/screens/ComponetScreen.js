@@ -53,7 +53,7 @@ class ComponetScreen extends React.Component {
               <View style={styles.replyContainer}>
                 <View style={styles.replyLine}>
                   <View style={styles.profile} />
-                  <Text>
+                  <Text style={styles.replyText}>
                     영화가 너무 아름답다... ost도 잊혀지지않고 디즈니 실사중에
                     최고다.
                   </Text>
@@ -135,14 +135,21 @@ const styles = StyleSheet.create({
   },
   replyContainer: {
     width: '100%',
-    height: 120,
     display: 'flex',
     overflow: 'hidden',
     padding: 16,
   },
   replyLine: {
+    paddingTop: 4,
+    paddingBottom: 4,
     flex: 1,
     flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#3e4554',
+  },
+  replyText: {
+    padding: 4,
+    flex: 1,
   },
   row: {
     flex: 1,
