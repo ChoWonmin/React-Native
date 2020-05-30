@@ -16,16 +16,22 @@ class Room extends React.Component {
               </View>
               <View style={styles.profileInfoWarp}>
                 <View style={styles.profileInfoBox}>
-                  <Text style={styles.body1}>정답</Text>
-                  <Text style={styles.body1}>36</Text>
+                  <View style={styles.profileInfoBoxText}>
+                    <Text style={styles.body1}>정답</Text>
+                    <Text style={styles.body1}>36</Text>
+                  </View>
                 </View>
                 <View style={styles.profileInfoBox}>
-                  <Text style={styles.body1}>게시물</Text>
-                  <Text style={styles.body1}>16</Text>
+                  <View style={styles.profileInfoBoxText}>
+                    <Text style={styles.body1}>게시물</Text>
+                    <Text style={styles.body1}>16</Text>
+                  </View>
                 </View>
                 <View style={styles.profileInfoBox}>
-                  <Text style={styles.body1}>팔로워</Text>
-                  <Text style={styles.body1}>166</Text>
+                  <View style={styles.profileInfoBoxText}>
+                    <Text style={styles.body1}>팔로워</Text>
+                    <Text style={styles.body1}>166</Text>
+                  </View>
                 </View>
               </View>
             </View>
@@ -46,7 +52,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  infoContainer: {height: 240, backgroundColor: '#f7f9fe'},
+  infoContainer: {height: 180, backgroundColor: '#f7f9fe'},
   infoLine: {
     height: 124,
     backgroundColor: '#44f9fe',
@@ -61,17 +67,21 @@ const styles = StyleSheet.create({
     backgroundColor: '#a6b1e1',
   },
   profileName: {
-    backgroundColor: '#a6b1aa',
     flex: 1,
     justifyContent: 'center',
     paddingLeft: 12,
   },
   profileInfoWarp: {
-    width: 140,
+    width: 160,
     flexDirection: 'row',
   },
   profileInfoBox: {
     flex: 1,
+  },
+  profileInfoBoxText: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   Headline: {
     color: '#3e4554',
@@ -80,8 +90,9 @@ const styles = StyleSheet.create({
   },
   body1: {
     color: '#3e4554',
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: 'bold',
-    lineHeight: 14,
+    height: 24,
+    lineHeight: 24,
   },
 });
