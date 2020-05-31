@@ -36,6 +36,7 @@ class Room extends React.Component {
               </View>
             </View>
           </View>
+          <View style={styles.controlLine} />
         </View>
       </SafeAreaView>
     );
@@ -82,6 +83,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  controlLine: {
+    flexDirection: 'row',
   },
   Headline: {
     color: '#3e4554',
