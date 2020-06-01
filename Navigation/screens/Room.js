@@ -1,6 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StyleSheet, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
+import HashButton from '../components/HashButton';
 
 class Room extends React.Component {
   render() {
@@ -35,8 +36,10 @@ class Room extends React.Component {
                 </View>
               </View>
             </View>
+            <View style={styles.controlLine}>
+              <HashButton />
+            </View>
           </View>
-          <View style={styles.controlLine} />
         </View>
       </SafeAreaView>
     );
