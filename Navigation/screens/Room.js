@@ -88,7 +88,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   controlLine: {
+    flex: 1,
     flexDirection: 'row',
+    paddingHorizontal: 12,
+    alignItems: 'center',
   },
   Headline: {
     color: '#3e4554',

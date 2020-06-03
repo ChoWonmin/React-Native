@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     height: 36,
     paddingHorizontal: 12,
     backgroundColor: '#a6b1e1',
+    borderRadius: 100,
   },
   hashText: {
     lineHeight: 36,
