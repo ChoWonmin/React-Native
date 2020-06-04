@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
-import './button.css';
+// import './button.css';
 
 export default class HashButton extends Component {
   constructor(props) {
