@@ -1,0 +1,10 @@
+.hashWarp {
+  height: 36px;
+  padding: 0 12px;
+  background-color: '#a6b1e1';
+  border-radius: 100;
+}
+
+.hashWarp:hover {
+  background-color: '#dcd6f7';
+}
