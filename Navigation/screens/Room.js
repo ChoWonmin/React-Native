@@ -1,7 +1,7 @@
 import React from 'react';
 import {SafeAreaView, View, Text, StyleSheet, Button} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import HashButton from '../components/HashButton';
+import HashButton from '../components/HashButton/HashButton';
 
 class Room extends React.Component {
   render() {
@@ -37,7 +37,9 @@ class Room extends React.Component {
               </View>
             </View>
             <View style={styles.controlLine}>
-              <HashButton />
+              <HashButton name="직접 등록한 목록" />
+              <HashButton name="맞춘 목록" />
+              <HashButton name="좋아한 목록" />
             </View>
           </View>
         </View>
@@ -59,7 +61,6 @@ const styles = StyleSheet.create({
   infoContainer: {height: 180, backgroundColor: '#f7f9fe'},
   infoLine: {
     height: 124,
-    backgroundColor: '#44f9fe',
     paddingTop: 12,
     paddingBottom: 12,
     flexDirection: 'row',
