@@ -7,7 +7,7 @@ class Room extends React.Component {
   render() {
     const {navigation} = this.props;
     return (
-      <SafeAreaView>
+      <SafeAreaView style={styles.safeArea}>
         <View style={styles.container}>
           <View style={styles.infoContainer}>
             <View style={styles.infoLine}>
@@ -42,6 +42,7 @@ class Room extends React.Component {
               <HashButton name="좋아한 목록" />
             </View>
           </View>
+          <View style={styles.PhotoContainer} />
         </View>
       </SafeAreaView>
     );
@@ -55,8 +56,13 @@ export default function(props) {
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+  },
   container: {
     flex: 1,
+    backgroundColor: 'red',
+    height: '100%',
   },
   infoContainer: {height: 180, backgroundColor: '#f7f9fe'},
   infoLine: {
@@ -93,6 +99,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 12,
     alignItems: 'center',
+  },
+  PhotoContainer: {
+    flex: 1,
+    backgroundColor: '#3e4554',
   },
   Headline: {
     color: '#3e4554',
