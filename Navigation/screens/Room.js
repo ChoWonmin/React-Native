@@ -1,5 +1,12 @@
 import React from 'react';
-import {SafeAreaView, View, Text, StyleSheet, Button} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  Button,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import HashButton from '../components/HashButton/HashButton';
 
@@ -42,7 +49,16 @@ class Room extends React.Component {
               <HashButton name="좋아한 목록" />
             </View>
           </View>
-          <View style={styles.PhotoContainer} />
+          <View style={styles.PhotoContainer}>
+            <ScrollView>
+              <View style={styles.PhotoList}>
+                <View style={styles.PhotoWrap} />
+                <View style={styles.PhotoWrap} />
+                <View style={styles.PhotoWrap} />
+                <View style={styles.PhotoWrap} />
+              </View>
+            </ScrollView>
+          </View>
         </View>
       </SafeAreaView>
     );
@@ -103,6 +119,16 @@ const styles = StyleSheet.create({
   PhotoContainer: {
     flex: 1,
     backgroundColor: '#3e4554',
+  },
+  PhotoList: {
+    flex: 1,
+    flexDirection: 'row',
+    backgroundColor: 'blue',
+  },
+  PhotoWrap: {
+    width: '33%',
+    height: 120,
+    backgroundColor: 'red',
   },
   Headline: {
     color: '#3e4554',
