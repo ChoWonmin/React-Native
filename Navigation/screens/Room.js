@@ -8,7 +8,8 @@ import {
   Button,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import HashButton from '../components/HashButton/HashButton';
+import HashButton from '../components/HashButton';
+import PhotoList from '../components/PhotoList';
 
 class Room extends React.Component {
   render() {
@@ -50,14 +51,7 @@ class Room extends React.Component {
             </View>
           </View>
           <View style={styles.PhotoContainer}>
-            <ScrollView>
-              <View style={styles.PhotoList}>
-                <View style={styles.PhotoWrap} />
-                <View style={styles.PhotoWrap} />
-                <View style={styles.PhotoWrap} />
-                <View style={styles.PhotoWrap} />
-              </View>
-            </ScrollView>
+            <PhotoList />
           </View>
         </View>
       </SafeAreaView>
@@ -119,16 +113,6 @@ const styles = StyleSheet.create({
   PhotoContainer: {
     flex: 1,
     backgroundColor: '#3e4554',
-  },
-  PhotoList: {
-    flex: 1,
-    flexDirection: 'row',
-    backgroundColor: 'blue',
-  },
-  PhotoWrap: {
-    width: '33%',
-    height: 120,
-    backgroundColor: 'red',
   },
   Headline: {
     color: '#3e4554',
