@@ -1,21 +1,36 @@
 import React from 'react';
-import {View, Text, StyleSheet, Button, TextInput} from 'react-native';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Image,
+  Text,
+  StyleSheet,
+  Button,
+  TextInput,
+} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 class HomeScreen extends React.Component {
+  navigation = this.props;
+
   render() {
-    const {navigation} = this.props;
     return (
-      <View style={styles.container}>
-        <Text>Home Screen</Text>
-        <Button
-          title="Go to PostScreen"
-          onPress={() => {
-            navigation.navigate('Post');
-          }}
-        />
-        <TextInput />
-      </View>
+      <SafeAreaView>
+        <ScrollView>
+          <View style={styles.container}>
+            <View style={styles.postContainer}>
+              <Image
+                source={require('../assets/aladin.jpg')}
+                style={{width: '100%'}}
+              />
+              <View style={styles.postInputContainer}>
+                <TextInput style={styles.postInput} />
+              </View>
+            </View>
+          </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }
@@ -29,7 +44,22 @@ export default function(props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  },
+  postContainer: {
+    width: '100%',
+    backgroundColor: '#f7f9fe',
+  },
+  postImage: {
+    width: '100%',
+  },
+  postInputContainer: {
+    width: '100%',
+    height: 72,
+  },
+  postInput: {
+    width: '100%',
+    height: 72,
+    borderWidth: 1,
+    padding: 4,
   },
 });

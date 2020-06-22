@@ -12,8 +12,9 @@ import {
 import {useNavigation} from '@react-navigation/native';
 
 class ComponetScreen extends React.Component {
+  navigation = this.props;
+
   render() {
-    const {navigation} = this.props;
     return (
       <SafeAreaView>
         <ScrollView>
@@ -60,12 +61,6 @@ class ComponetScreen extends React.Component {
                 </View>
               </View>
             </View>
-          </View>
-          <View style={styles.postContainer}>
-            <Image
-              source={require('../assets/lat.jpg')}
-              style={{width: '100%'}}
-            />
           </View>
           <Button
             title="Go to ComponetScreen"

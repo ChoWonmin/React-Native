@@ -11,11 +11,16 @@ export default class PhotoList extends Component {
       <ScrollView style={styles.photoList}>
         <View style={styles.photoLine}>
           <View style={styles.photoWrap}>
-            <Image
+            {/* <Image
               source={require('../../assets/aladin.jpg')}
               style={{width: '100%'}}
-            />
+            /> */}
           </View>
+          <View style={styles.photoWrap} />
+          <View style={styles.photoWrap} />
+        </View>
+        <View style={styles.photoLine}>
+          <View style={styles.photoWrap} />
           <View style={styles.photoWrap} />
           <View style={styles.photoWrap} />
         </View>
@@ -31,16 +36,18 @@ export default class PhotoList extends Component {
 
 const styles = StyleSheet.create({
   photoList: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: 'blue',
+    flexDirection: 'row',
   },
   photoLine: {
-    width: '100%',
-    height: 120,
+    // width: '33%',
+    flex: 1,
+    height: 72,
   },
   photoWrap: {
-    flex: 1,
     padding: 12,
     backgroundColor: 'red',
+    borderWidth: 1,
   },
 });

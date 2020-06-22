@@ -14,10 +14,13 @@ const Stack = createStackNavigator();
 function MyStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Room" component={Room} />
-      <Stack.Screen name="Componet" component={ComponetScreen} />
-      <Stack.Screen name="Stack" component={StackScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Room" component={Room} />
+
+      <Stack.Screen name="Componet" component={ComponetScreen} />
+
+      <Stack.Screen name="Stack" component={StackScreen} />
+
       <Stack.Screen name="Post" component={PostScreen} />
     </Stack.Navigator>
   );

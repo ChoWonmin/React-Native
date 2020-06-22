@@ -12,8 +12,9 @@ import HashButton from '../components/HashButton';
 import PhotoList from '../components/PhotoList';
 
 class Room extends React.Component {
+  navigation = this.props;
+
   render() {
-    const {navigation} = this.props;
     return (
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.container}>
