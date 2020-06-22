@@ -9,36 +9,33 @@ import {
   Button,
   TextInput,
 } from 'react-native';
-import {useNavigation} from '@react-navigation/native';
 
-class HomeScreen extends React.Component {
-  navigation = this.props;
+export default function HomeScreen({navigation}) {
+  const [value, onChangeText] = React.useState('');
 
-  render() {
-    return (
-      <SafeAreaView>
-        <ScrollView>
-          <View style={styles.container}>
-            <View style={styles.postContainer}>
-              <Image
-                source={require('../assets/aladin.jpg')}
-                style={{width: '100%'}}
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.postContainer}>
+            <Image
+              source={require('../assets/aladin.jpg')}
+              style={{width: '100%'}}
+            />
+            <View style={styles.postInputContainer}>
+              <TextInput
+                style={styles.postInput}
+                onChangeText={text => onChangeText(text)}
+                value={value}
+                onSubmitEditing={event => navigation.navigate('Post')}
+                placeholder="정답을 입력하세요."
               />
-              <View style={styles.postInputContainer}>
-                <TextInput style={styles.postInput} />
-              </View>
             </View>
           </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
-}
-
-export default function(props) {
-  const navigation = useNavigation();
-
-  return <HomeScreen {...props} navigatetion={navigation} />;
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({
