@@ -9,26 +9,30 @@ export default class PhotoList extends Component {
   render() {
     return (
       <ScrollView style={styles.photoList}>
-        <View style={styles.photoLine}>
-          <View style={styles.photoWrap}>
-            {/* <Image
+        <View style={styles.photoWrap}>
+          {/* <Image
               source={require('../../assets/aladin.jpg')}
               style={{width: '100%'}}
             /> */}
-          </View>
-          <View style={styles.photoWrap} />
-          <View style={styles.photoWrap} />
         </View>
-        <View style={styles.photoLine}>
-          <View style={styles.photoWrap} />
-          <View style={styles.photoWrap} />
-          <View style={styles.photoWrap} />
+        <View style={styles.photoWrap} />
+        <View style={styles.photoWrap} />
+        <View style={styles.photoWrap}>
+          {/* <Image
+              source={require('../../assets/aladin.jpg')}
+              style={{width: '100%'}}
+            /> */}
         </View>
-        <View style={styles.photoLine}>
-          <View style={styles.photoWrap} />
-          <View style={styles.photoWrap} />
-          <View style={styles.photoWrap} />
+        <View style={styles.photoWrap} />
+        <View style={styles.photoWrap} />
+        <View style={styles.photoWrap}>
+          {/* <Image
+              source={require('../../assets/aladin.jpg')}
+              style={{width: '100%'}}
+            /> */}
         </View>
+        <View style={styles.photoWrap} />
+        <View style={styles.photoWrap} />
       </ScrollView>
     );
   }
@@ -38,14 +42,14 @@ const styles = StyleSheet.create({
   photoList: {
     // flex: 1,
     backgroundColor: 'blue',
-    flexDirection: 'row',
-  },
-  photoLine: {
-    // width: '33%',
-    flex: 1,
-    height: 72,
+    flexDirection: 'column',
+    flexWrap: 'wrap',
   },
   photoWrap: {
+    flexGrow: 1,
+    flexShrink: 0,
+    flexBasis: 'auto',
+    width: 150,
     padding: 12,
     backgroundColor: 'red',
     borderWidth: 1,

@@ -5,79 +5,67 @@ import {
   View,
   Text,
   StyleSheet,
+  TouchableOpacity,
   Button,
   Image,
 } from 'react-native';
-// import {AccessAlarm, ThreeDRotation} from '@material-ui/icons';
-import {useNavigation} from '@react-navigation/native';
 
-class PostScreen extends React.Component {
-  navigation = this.props;
-
-  render() {
-    return (
-      <SafeAreaView>
-        <ScrollView>
-          <View style={styles.container}>
-            <View style={styles.postContainer}>
-              <Image
-                source={require('../assets/aladin.jpg')}
-                style={{width: '100%'}}
-              />
-              <View style={styles.postContent}>
-                <View>
-                  <Text style={styles.Headline}>알라딘</Text>
-                </View>
-                <View style={styles.profileLine}>
-                  <View style={styles.profile} />
-                  <View style={styles.profileBody}>
-                    <View style={styles.row}>
-                      <Text style={styles.body1}>wonmin</Text>
-                    </View>
-                    <View style={styles.row}>
-                      <Text style={styles.body1}>Seoul, South Korea</Text>
-                    </View>
+export default function PostScreen({navigation}) {
+  return (
+    <SafeAreaView>
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.postContainer}>
+            <Image
+              source={require('../assets/aladin.jpg')}
+              style={{width: '100%'}}
+            />
+            <View style={styles.postContent}>
+              <View>
+                <Text style={styles.Headline}>알라딘</Text>
+              </View>
+              <View style={styles.profileLine}>
+                <View style={styles.profile} />
+                <View style={styles.profileBody}>
+                  <View style={styles.row}>
+                    <Text style={styles.body1}>wonmin</Text>
                   </View>
-                </View>
-                <View style={styles.hashtagLine}>
-                  <View style={styles.hashtag}>
-                    <Text style={styles.hashtagText}>#Noami_scott</Text>
-                  </View>
-                  <View style={styles.hashtag}>
-                    <Text style={styles.hashtagText}>#arabian</Text>
-                  </View>
-                  <View style={styles.hashtag}>
-                    <Text style={styles.hashtagText}>#Jasmine</Text>
+                  <View style={styles.row}>
+                    <Text style={styles.body1}>Seoul, South Korea</Text>
                   </View>
                 </View>
               </View>
-              <View style={styles.replyContainer}>
-                <View style={styles.replyLine}>
-                  <View style={styles.profile} />
-                  <Text style={styles.replyText}>
-                    영화가 너무 아름답다... ost도 잊혀지지않고 디즈니 실사중에
-                    최고다.
-                  </Text>
+              <View style={styles.hashtagLine}>
+                <View style={styles.hashtag}>
+                  <Text style={styles.hashtagText}>#Noami_scott</Text>
+                </View>
+                <View style={styles.hashtag}>
+                  <Text style={styles.hashtagText}>#arabian</Text>
+                </View>
+                <View style={styles.hashtag}>
+                  <Text style={styles.hashtagText}>#Jasmine</Text>
                 </View>
               </View>
             </View>
+            <View style={styles.replyContainer}>
+              <View style={styles.replyLine}>
+                <TouchableOpacity
+                  style={styles.profile}
+                  onPress={() => {
+                    navigation.push('Room');
+                  }}
+                />
+                <Text style={styles.replyText}>
+                  영화가 너무 아름답다... ost도 잊혀지지않고 디즈니 실사중에
+                  최고다.
+                </Text>
+              </View>
+            </View>
           </View>
-          <Button
-            title="Go to ComponetScreen"
-            onPress={() => {
-              navigation.navigate('Post');
-            }}
-          />
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
-}
-
-export default function(props) {
-  const navigation = useNavigation();
-
-  return <PostScreen {...props} navigatetion={navigation} />;
+        </View>
+      </ScrollView>
+    </SafeAreaView>
+  );
 }
 
 const styles = StyleSheet.create({

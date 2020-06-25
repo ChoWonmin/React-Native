@@ -7,21 +7,19 @@ import HomeScreen from './screens/HomeScreen';
 import PostScreen from './screens/PostScreen';
 import StackScreen from './screens/StackScreen';
 import ComponetScreen from './screens/ComponetScreen';
-import Room from './screens/Room';
+import RoomScreen from './screens/RoomScreen';
 
 const Stack = createStackNavigator();
 
 function MyStack() {
   return (
     <Stack.Navigator>
+      <Stack.Screen name="Room" component={RoomScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="Room" component={Room} />
+      <Stack.Screen name="Post" component={PostScreen} />
 
       <Stack.Screen name="Componet" component={ComponetScreen} />
-
       <Stack.Screen name="Stack" component={StackScreen} />
-
-      <Stack.Screen name="Post" component={PostScreen} />
     </Stack.Navigator>
   );
 }

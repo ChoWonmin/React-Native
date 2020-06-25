@@ -27,8 +27,13 @@ export default function HomeScreen({navigation}) {
                 style={styles.postInput}
                 onChangeText={text => onChangeText(text)}
                 value={value}
-                onSubmitEditing={event => navigation.navigate('Post')}
+                onSubmitEditing={event => {
+                  if (event.nativeEvent.text === '알라딘') {
+                    navigation.navigate('Post');
+                  }
+                }}
                 placeholder="정답을 입력하세요."
+                clearTextOnFocus
               />
             </View>
           </View>
