@@ -1,16 +1,38 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
+  FlatList,
   View,
   Text,
   StyleSheet,
-  Button,
+  Image,
 } from 'react-native';
 
 import HashButton from '../components/HashButton';
 import PhotoList from '../components/PhotoList';
 import MasonryList from 'react-native-masonry-list';
+
+const data = [
+  {
+    id: '1',
+    url: '../../assets/aladin.jpg',
+  },
+  {
+    id: '2',
+    url: '../../assets/lat.jpg',
+  },
+];
+
+function Item({url}) {
+  const path = require(url);
+
+  return (
+    <View style={styles.item}>
+      {/* <Image style={{width: '100%', height: 100}} source={path} /> */}
+      {/* <Text style={styles.title}>{path}</Text> */}
+    </View>
+  );
+}
 
 export default function RoomScreen({navigatetion}) {
   return (
@@ -50,62 +72,12 @@ export default function RoomScreen({navigatetion}) {
           </View>
         </View>
         <View style={styles.PhotoContainer}>
-          <MasonryList
-            itemSource={['node', 'image']}
-            images={[
-              {
-                node: {
-                  image: {
-                    uri:
-                      'https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg',
-                  },
-                },
-              },
-              {
-                node: {
-                  image: {
-                    source: {
-                      uri:
-                        'https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg',
-                    },
-                  },
-                },
-              },
-              {
-                node: {
-                  image: {
-                    uri:
-                      'https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg',
-                    dimensions: {width: 1080, height: 1920},
-                  },
-                },
-              },
-              {
-                node: {
-                  image: {
-                    URI:
-                      'https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg',
-                    id: 'blpccx4cn',
-                  },
-                },
-              },
-              {
-                node: {
-                  image: {
-                    url:
-                      'https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg',
-                  },
-                },
-              },
-              {
-                node: {
-                  image: {
-                    URL:
-                      'https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg',
-                  },
-                },
-              },
-            ]}
+          <FlatList
+            style={styles.PhotoFlatList}
+            data={data}
+            renderItem={({item}) => <Item url={item.url} />}
+            keyExtractor={item => item.id}
+            numColumns={3}
           />
         </View>
       </View>
@@ -160,7 +132,31 @@ const styles = StyleSheet.create({
   },
   PhotoContainer: {
     flex: 1,
+    flexDirection: 'row',
     backgroundColor: '#3e4554',
+  },
+  PhotoFlatList: {
+    flexDirection: 'row',
+    // backgroundColor: 'green',
+    borderWidth: 1,
+    borderColor: 'red',
+    overflow: 'hidden',
+  },
+  item: {
+    backgroundColor: 'yellow',
+    // padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+    width: 100,
+    minHeight: 40,
+  },
+  itemImage: {
+    width: '100%',
+    // flex: 1,
+    // height: 100,
+  },
+  title: {
+    fontSize: 32,
   },
   Headline: {
     color: '#3e4554',
