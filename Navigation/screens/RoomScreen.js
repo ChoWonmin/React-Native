@@ -10,6 +10,7 @@ import {
 
 import HashButton from '../components/HashButton';
 import PhotoList from '../components/PhotoList';
+import MasonryList from 'react-native-masonry-list';
 
 export default function RoomScreen({navigatetion}) {
   return (
@@ -49,7 +50,63 @@ export default function RoomScreen({navigatetion}) {
           </View>
         </View>
         <View style={styles.PhotoContainer}>
-          <PhotoList />
+          <MasonryList
+            itemSource={['node', 'image']}
+            images={[
+              {
+                node: {
+                  image: {
+                    uri:
+                      'https://luehangs.site/pic-chat-app-images/beautiful-blond-blonde-hair-478544.jpg',
+                  },
+                },
+              },
+              {
+                node: {
+                  image: {
+                    source: {
+                      uri:
+                        'https://luehangs.site/pic-chat-app-images/beautiful-beautiful-women-beauty-40901.jpg',
+                    },
+                  },
+                },
+              },
+              {
+                node: {
+                  image: {
+                    uri:
+                      'https://luehangs.site/pic-chat-app-images/animals-avian-beach-760984.jpg',
+                    dimensions: {width: 1080, height: 1920},
+                  },
+                },
+              },
+              {
+                node: {
+                  image: {
+                    URI:
+                      'https://luehangs.site/pic-chat-app-images/beautiful-blond-fishnet-stockings-48134.jpg',
+                    id: 'blpccx4cn',
+                  },
+                },
+              },
+              {
+                node: {
+                  image: {
+                    url:
+                      'https://luehangs.site/pic-chat-app-images/beautiful-beautiful-woman-beauty-9763.jpg',
+                  },
+                },
+              },
+              {
+                node: {
+                  image: {
+                    URL:
+                      'https://luehangs.site/pic-chat-app-images/attractive-balance-beautiful-186263.jpg',
+                  },
+                },
+              },
+            ]}
+          />
         </View>
       </View>
     </SafeAreaView>
